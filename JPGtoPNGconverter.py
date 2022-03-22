@@ -1,5 +1,4 @@
-# run with two args, first is foldername/ newfoldertocreate/
-
+from distutils.command.clean import clean
 import sys
 import os
 from os import path
@@ -20,9 +19,9 @@ else:
 # loop through origin, grab each, convert to png, store on new folder
 
 for filename in os.listdir(origin_folder):
-    f = os.path.join(origin_folder, filename)
+    img = Image.open(f'{origin_folder}{filename}')
 
-    if os.path.isfile(f):
-        print(f)
-        img = Image.open(f)
-        img.save(f, 'png')
+    # necesitamos remover la ext .jpg, devuelve tupple. 0 es filename
+    clean_name = os.path.splitext(filename)[0]
+    img.save(f'{target_folder}{clean_name}.png', 'png')
+    print('all done')
