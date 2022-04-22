@@ -1,2 +1,2 @@
-# Python-0TM-image-processing
-Python 0TM Image Processing with Pillow 
+# Python-ZTM-image-processing
+Python ZTM Image Processing with Pillow 
